@@ -2,7 +2,10 @@ services:
   - type: web
     name: energy-saving-assistant-api
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install --upgrade pip &&
+      pip install -r requirements.txt &&
+      mkdir -p static
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION

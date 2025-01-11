@@ -18,11 +18,11 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
-from backend.app.database import get_db
-from backend.app.services.analysis import EnergyAnalysisService
-from backend.app.services.auth import AuthService
-from backend.app.schemas.user import UserCreate, User
-from backend.app.schemas.analysis import AnalysisResponse
+from app.database import get_db
+from app.services.analysis import EnergyAnalysisService
+from app.services.auth import AuthService
+from app.schemas.user import UserCreate, User
+from app.schemas.analysis import AnalysisResponse
 
 app = FastAPI(
     title="Energy Saving Assistant",
