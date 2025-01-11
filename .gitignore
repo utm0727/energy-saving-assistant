@@ -1,1 +1,17 @@
-node_modules
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Node
+node_modules/
+/build
+/dist
+
+# IDE
+.vscode/
+.idea/
+
+# Data
+*.csv

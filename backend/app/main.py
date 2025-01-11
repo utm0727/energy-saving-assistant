@@ -42,7 +42,7 @@ analysis_service = EnergyAnalysisService()
 # CORS配置
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://你的用户名.github.io"],  # 替换成您的 GitHub Pages 域名
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
