@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = process.env.NODE_ENV === 'production'
+  ? 'https://energy-saving-assistant.onrender.com'  // 生产环境 API
+  : 'http://localhost:8000';                        // 开发环境 API
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -49,17 +51,7 @@ const api = {
   getAnalysis: async () => {
     console.log('Making API request to:', `${BASE_URL}/dashboard`);
     try {
-      const token = localStorage.getItem('token');
-      console.log('Using token:', token);
-      
-      const response = await axios.get(`${BASE_URL}/dashboard`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      
-      console.log('API response received:', response);
-      return response;
+      return axiosInstance.get('/dashboard');
     } catch (error) {
       console.error('API request failed:', error);
       throw error;

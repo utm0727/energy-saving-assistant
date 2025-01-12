@@ -36,7 +36,10 @@ export default function Login() {
     try {
       if (tab === 0) { // Regular login
         const response = await api.login(formData.username, formData.password);
-        localStorage.setItem('token', response.data.access_token);
+        console.log('Login response:', response);
+        const token = response.data.access_token;
+        console.log('Received token:', token);
+        localStorage.setItem('token', token);
         navigate('/');
       } else if (tab === 1) { // TNB login
         setError('TNB登录功能暂未开放。请使用普通账号登录。');

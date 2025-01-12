@@ -32,6 +32,13 @@ export default function Layout() {
     console.log('Current token:', token);
   }, []);
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   const handleLogout = () => {
     console.log('Logging out...');
     localStorage.removeItem('token');
