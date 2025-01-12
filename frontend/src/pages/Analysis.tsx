@@ -19,6 +19,10 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip as RechartsTooltip
 } from 'recharts';
 import { Line as ChartJSLine } from 'react-chartjs-2';
 import {
