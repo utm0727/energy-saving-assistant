@@ -1,6 +1,6 @@
 const API_BASE_URL = process.env.NODE_ENV === 'production'
-  ? 'https://your-app-name.onrender.com'  // Render URL
-  : 'http://localhost:8000';              // 本地开发 URL
+  ? 'https://energy-saving-assistant.onrender.com'  // 生产环境 API
+  : 'http://localhost:8000';                        // 开发环境 API
 
 // API 调用示例
 export const fetchData = async () => {
