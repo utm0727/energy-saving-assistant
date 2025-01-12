@@ -5,7 +5,7 @@ services:
     buildCommand: |
       pip install --upgrade pip &&
       pip install -r requirements.txt &&
-      mkdir -p static
+      mkdir -p backend/static
     startCommand: |
       export PYTHONPATH=/opt/render/project/src &&
       cd backend &&

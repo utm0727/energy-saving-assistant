@@ -33,7 +33,7 @@ app = FastAPI(
 )
 
 # 添加静态文件服务
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="backend/static"), name="static")
 
 # 初始化服务
 auth_service = AuthService()
