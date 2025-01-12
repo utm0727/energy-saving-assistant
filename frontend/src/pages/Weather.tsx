@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Container,
   Grid,
@@ -12,7 +12,6 @@ import {
 } from '@mui/material';
 import {
   WbSunny,
-  Opacity,
   Thermostat,
   Warning,
   TrendingUp,

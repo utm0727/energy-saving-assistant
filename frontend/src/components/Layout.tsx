@@ -7,12 +7,10 @@ import {
   Toolbar,
   List,
   Typography,
-  Divider,
   IconButton,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Link,
 } from '@mui/material';
 import {
   Menu as MenuIcon,

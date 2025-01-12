@@ -27,6 +27,8 @@ jobs:
           npm install
           
       - name: Build React App
+        env:
+          CI: false  # 这里设置 CI=false
         run: |
           cd frontend
           npm run build

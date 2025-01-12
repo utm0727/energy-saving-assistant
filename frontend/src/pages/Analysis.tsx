@@ -16,12 +16,6 @@ import {
   Timeline as TimelineIcon,
 } from '@mui/icons-material';
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip as RechartsTooltip,
   ResponsiveContainer,
   BarChart,
   Bar,
