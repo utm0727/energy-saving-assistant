@@ -80,26 +80,46 @@ export default function Analysis() {
 
   useEffect(() => {
     const fetchAnalysis = async () => {
+      console.log('Starting to fetch analysis data...');
       try {
         const response = await api.getAnalysis();
+        console.log('API response:', response);
+        console.log('API response data:', response.data);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching analysis:', error);
       } finally {
         setLoading(false);
+        console.log('Loading finished, loading state:', loading);
       }
     };
 
     fetchAnalysis();
   }, []);
 
+  useEffect(() => {
+    console.log('Data state updated:', data);
+  }, [data]);
+
   if (loading) {
+    console.log('Rendering loading state...');
     return (
       <Box display="flex" justifyContent="center" alignItems="center" minHeight="60vh">
         <CircularProgress />
       </Box>
     );
   }
+
+  if (!data) {
+    console.log('No data available...');
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="60vh">
+        <Typography variant="h6">No data available</Typography>
+      </Box>
+    );
+  }
+
+  console.log('Rendering with data:', data);
 
   const weeklyData = data?.trends.weekly_pattern
     ? Object.entries(data.trends.weekly_pattern).map(([day, value]) => ({

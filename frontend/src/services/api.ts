@@ -46,8 +46,24 @@ const api = {
     });
   },
 
-  getAnalysis: () => {
-    return axiosInstance.post('/analyze-consumption');
+  getAnalysis: async () => {
+    console.log('Making API request to:', `${BASE_URL}/dashboard`);
+    try {
+      const token = localStorage.getItem('token');
+      console.log('Using token:', token);
+      
+      const response = await axios.get(`${BASE_URL}/dashboard`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      
+      console.log('API response received:', response);
+      return response;
+    } catch (error) {
+      console.error('API request failed:', error);
+      throw error;
+    }
   },
 
   getDashboardData: () => {

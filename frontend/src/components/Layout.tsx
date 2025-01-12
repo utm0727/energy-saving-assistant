@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -26,7 +26,14 @@ const drawerWidth = 280;
 export default function Layout() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    console.log('Layout mounted');
+    const token = localStorage.getItem('token');
+    console.log('Current token:', token);
+  }, []);
+
   const handleLogout = () => {
+    console.log('Logging out...');
     localStorage.removeItem('token');
     navigate('/login');
   };
